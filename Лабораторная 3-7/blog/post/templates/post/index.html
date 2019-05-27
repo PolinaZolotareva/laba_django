@@ -1,0 +1,59 @@
+{% extends "post/header.html" %}
+
+{% block title %} БЛОГ - Главная {% endblock %}
+
+{% block link %}
+	{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block data %}
+		<header>
+			<h1>Django public blog</h1>
+		</header>
+		{% for post in posts %}
+			<article class="article">
+				<h1><a href="{% url 'articles' pk=post.id %}">{{post.title}}</a></h1>
+				<p class="toggle">Скрыть</p>
+				<div class="article__info">
+					<p>{{post.author}}</p>
+					<p>{{post.create}}</p>
+				</div>
+				<div class="article__text">
+					{{post.text}}
+				</div>
+			</article>
+		{% endfor %}
+		<style>
+			.toggle {
+				text-align: right;
+				cursor: pointer;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(".article__text").text(function(i, text) {
+
+			  if (text.length >= 140) {
+			    text = text.substring(0, 140);
+			    var lastIndex = text.lastIndexOf(" ");
+			    text = text.substring(0, lastIndex) + '...'; 
+			  }
+			  
+			  $(this).text(text);
+			  
+			});
+		</script>
+		<script>
+		    $(document).ready(function() {
+		    	$(".toggle").click(function() {
+		    		$(this).siblings('.article__text, .article__info').slideToggle(500);
+		    		if ($(this).html() == "Скрыть") {
+		    			$(this).html("Показать");
+		    		}
+		    		else if ($(this).html() == "Показать") {
+		    			$(this).html("Скрыть");
+		    		}
+		    	})
+		    })
+		</script>
+{% endblock %}

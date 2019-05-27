@@ -1,0 +1,32 @@
+@import "config.css" all;
+
+header {
+	text-align: center;
+}
+
+a {
+	color: white;
+}
+
+.article {
+
+	margin-top: 10px;
+
+	&__info {
+
+		display: flex;
+		padding-top: 10px;
+
+		p {
+			font-size: 14px;
+
+			&:last-child {
+				flex-grow: 1;
+				text-align: right;
+			}
+		}
+	}
+	&__text {
+		padding-top: 20px;
+	}
+}

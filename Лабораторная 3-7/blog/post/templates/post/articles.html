@@ -1,0 +1,27 @@
+{% extends "post/header.html" %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block link %} 
+	{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/article.css' %}">
+{% endblock %}
+{% block data %}
+		<header>
+			<h1>Django public blog</h1>
+			<nav>
+				<a href="/">Все статьи</a>
+			</nav>
+		</header>
+
+		<article id="post">
+			<h1>{{post.title}}</h1>
+			<div id="post__info">
+				<div id="post__info__author">{{post.author}}</div>
+				<div id="post__info__create">{{post.create}}</div>
+			</div>
+			<div id="post__text">
+				{{post.text}}
+			</div>
+		</article>
+{% endblock %}

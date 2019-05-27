@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="robots" content="index,follow">
+
+			<title> {% block title %} {% endblock %} </title>
+
+		<meta name="description" content="#">
+		
+		{% load staticfiles %}
+
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/cat.ico' %}">
+		<link rel="stylesheet" href="{% static 'css/config.css' %}">
+		{% block link %}
+		{% endblock %}
+
+	</head>
+	<body>
+		<div class="noindex-header">
+			<h3><a href="/">BLOG</a></h3>
+			<div class="noindex-header__menu">
+				{% if user.is_authenticated %}
+					<a href="/edit">Написать статью</a>
+					<a href="/exit">Выход</a>
+				{% else %}
+					<a href="/login" id="login">Вход</a>
+					<a href="/registration" id="registration">Регистрация</a>
+				{% endif %}
+			</div>
+		</div>
+
+		{% block data %}
+		{% endblock %}
+
+	</body>
+</html>

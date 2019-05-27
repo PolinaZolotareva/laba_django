@@ -1,0 +1,77 @@
+@font-face {
+
+	font-family: 'Awesome';
+	
+	src:url('../../fonts/awesome/fontawesome-webfont.eot?v=4.7.0');
+	src:url('../../fonts/awesome/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+	url('../../fonts/awesome/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+	url('../../fonts/awesome/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+	url('../../fonts/awesome/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+	url('../../fonts/awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;
+	
+	font-style: normal;
+}
+
+.fa {
+
+    display: inline-block;
+
+	font: normal normal normal 14px/1 Awesome;
+	font-size: inherit;
+
+	text-rendering: auto;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&-coffee:before {
+	    content: "\f0f4";
+	}
+}
+
+header {
+
+	height: 70px;
+	background-color: #10131C;
+
+	display: flex;
+	align-items: center;
+
+	padding: 0 40px;
+
+	@media (max-width: 514px)
+	{
+		flex-direction: column;
+		
+		h1, nav {
+			margin: auto;
+		}
+	}
+
+	
+	nav {
+
+		display: flex;
+		flex-grow: 1;
+		justify-content: flex-end;
+		
+		a {
+			padding: 0 10px;
+		}
+
+		@media (max-width: 514px)
+		{
+			flex-grow: 0;
+		}
+	}
+
+	h1 {
+		font-size: 24px;
+
+		a {
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+}

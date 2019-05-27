@@ -1,0 +1,71 @@
+@import url(../normalize.css);
+@import url(../header/header.css);
+
+.wrap-login, .wrap-registration, .wrap-edit {
+
+	height: 88vh;
+	min-height: 400px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	flex-direction: column;
+
+	.login, .registration, .edit {
+
+		background-color: #f8f9fa;
+
+		border: 1px solid silver;
+		border-radius: 3px;
+
+		padding: 15px;
+
+		min-width: 320px;
+
+		span, label {
+			color: black;
+			display: block;
+		}
+
+		label {
+			padding: 10px 0;
+		}
+
+		input {
+
+			background-color: rgb(232, 240, 254);
+
+		    border: 1px solid #ced4da;
+		    border-radius: 4px;
+
+		    line-height: 1.5;
+		    
+		    width: 100%;
+		    padding: 5px;
+		}
+
+		button {
+			display: block;
+			width: 100%;
+			
+			border: 0;
+
+		    background-color: #007bff;
+		    border-color: #007bff;
+		    border-radius: 4px;
+
+		    color: white;
+
+		    margin-top: 15px;
+		    padding: 10px;
+
+		    text-align: center;
+
+		    &:hover {
+		    	background-color: #197482;
+		    }
+		}
+
+	}
+}

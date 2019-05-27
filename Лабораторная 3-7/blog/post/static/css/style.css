@@ -1,0 +1,25 @@
+header {
+  text-align: center;
+}
+.article {
+  margin-top: 10px;
+}
+
+.article h1 {
+	padding-top: 15px;
+}
+
+.article__info {
+  display: flex;
+  padding-top: 10px;
+}
+.article__info p {
+  font-size: 14px;
+}
+.article__info p:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.article__text {
+  padding-top: 20px;
+}

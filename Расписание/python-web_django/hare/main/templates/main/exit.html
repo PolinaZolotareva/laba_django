@@ -1,0 +1,30 @@
+{% extends "main/header.html" %}
+
+{% block title %} Вы успешно вышли из аккаунта! {% endblock %}
+
+{% block data %}
+	
+	<div class="messages">
+		<h1>Вы успешно вышли из аккаунта!)</h1>
+	</div>
+
+	<style>
+		.messages h1 {
+		    background-color: #dff0d8;
+		    border-color: #d0e9c6;
+		    color: #3c763d; 
+
+		    border: 1px solid transparent;
+		    border-radius: 4;
+
+			text-align: center;
+
+			padding: 15px;
+		}
+	</style>
+	<script>
+		setTimeout(function(){
+		  window.location.href = '/';
+		}, 1500);
+	</script>
+{% endblock %}

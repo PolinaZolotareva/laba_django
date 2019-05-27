@@ -1,0 +1,25 @@
+@import "noindex-header/noindex-header.css" all;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 30px;
+
+	background-color: #405991;
+	font-family: Arial Black, Arial, font-style;
+	color: #ffffff;
+}
+
+header h1 {
+  display: inline;
+  background-color: #405991;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+a {
+  color: white;
+}

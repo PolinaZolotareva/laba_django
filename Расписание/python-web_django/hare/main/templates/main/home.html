@@ -1,0 +1,37 @@
+{% extends "main/header.html" %}
+
+{% block title %} Расписание - Главная {% endblock %}
+
+	{% block data %}
+		<div class="container">
+			<div class="schedule">
+				{% for post in object_list %}
+					<div class="day">
+						<div class="day-name"  style="background-color: #2e143f">
+							{{post.title}}
+						</div>
+						<div class="day-list">
+							<p><time>{{post.time1}}</time>{{post.lesson1}}<br><span>Преподаватель: {{post.teacher1}}</span></p>
+							<p><time>{{post.time2}}</time>{{post.lesson2}}<br><span>Преподаватель: {{post.teacher2}}</span></p>
+							<p><time>{{post.time3}}</time>{{post.lesson3}}<br><span>Преподаватель: {{post.teacher3}}</span></p>
+							<p><time>{{post.time4}}</time>{{post.lesson4}}<br><span>Преподаватель: {{post.teacher4}}</span></p>
+							<p><time>{{post.time5}}</time>{{post.lesson5}}<br><span>Преподаватель: {{post.teacher5}}</span></p>
+
+							<div class="polina" style="background-color: #2e143f">Примечание старосты: <span id="{{post.id}}">{{post.govoritpolina}}</span></div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$('p:contains("None")').remove();
+			$(".polina span").each(function(i) {
+			      if ($(this).text().length < 1) {
+			      	 var id = $(this).attr("id");
+			         $("#" + id).parent().remove();
+			      }
+			});
+		</script>
+
+	{% endblock %}

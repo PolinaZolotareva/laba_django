@@ -1,0 +1,28 @@
+{% extends "main/header.html" %}
+
+{% block link %}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/form/form.css' %}">
+{% endblock %}
+
+{% block data %}
+
+	<style> #registration { color: #E51639 } </style>
+
+	<div class="wrap-registration">
+		<form class="registration" method="POST">
+
+			{% csrf_token %}
+			{{form.as_p}}
+
+			<button type="submit">Регистрация</button>
+		</form>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$('ul, span').remove();
+</script>
+
+{% endblock %}

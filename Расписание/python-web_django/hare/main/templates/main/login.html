@@ -1,0 +1,46 @@
+{% extends "main/header.html" %}
+
+{% block link %}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/form/form.css' %}">
+{% endblock %}
+
+{% block data %}
+
+	<style> #login { color: #E51639 } </style>
+
+	<div class="container">
+		<div class="wrap-login">
+			<form class="login" method="POST">
+				
+				{% csrf_token %}
+				{{form}}
+
+				<button href="#">Войти</button>
+
+				<div id="alert">
+					<p>
+						{% if messages %}
+							{% for m in messages %}
+								<span class="success">{{ m }}</span>
+							{% endfor %}
+						{% endif %}
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+	<style>
+		#alert p {
+		    border: 1px solid transparent;
+		    border-radius: 6;
+
+		    background-color: #dff0d8;
+		    border-color: #d0e9c6;
+		    color: #3c763d;
+
+		    margin-top: 20px;
+		    padding: 10px;
+		}
+	</style>
+{% endblock %}

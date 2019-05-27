@@ -1,0 +1,85 @@
+@import url(normalize.css);
+@import url(header/header.css);
+
+.schedule {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (max-width: 1350px) {
+		justify-content: center;
+	}
+
+	.day {
+		
+		width: 400px;
+		
+		background-color: white;
+		border-radius: 4px;
+
+		margin: 25px 25px 0 25px;
+		
+		&-name, &-list {
+			padding: 10px;
+		}
+		
+		&-name {
+			background-color: #10131C;
+			border-bottom: 1px solid white;
+			font-weight: 700;
+		}
+
+		&-list {
+			background: white;
+
+			* {
+				color:  #10131C;
+			}
+			
+			p {
+				border-bottom: 1px solid silver;
+
+				padding: 3px 0;
+				
+				time, span {
+					font-size: 13px;
+					font-family: monospace;
+				}
+
+				time {
+					border-right: 1px solid #10131C;
+
+					margin-right: 5px;
+					padding-right: 8px;
+
+					white-space: pre;
+				}
+
+				span {
+					color: maroon
+				}
+			}
+
+			.polina {
+
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+
+				margin: 15px 10px;
+				padding: 15px;
+
+				background-color: #10131C;
+				color: white;
+
+				span {
+					color: silver;
+					
+					padding-top: 10px;
+
+					font-size: 13px;
+					font-family: monospace;
+				}
+			}
+		}
+	}
+}
